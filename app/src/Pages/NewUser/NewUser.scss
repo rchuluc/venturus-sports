@@ -1,0 +1,33 @@
+@import '../../colors.scss';
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  margin: 48px;
+}
+
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  & span {
+    margin: auto 0 auto auto;
+    width: 75vw;
+    border-bottom: 2.5px solid #f0f0f0;
+  }
+
+  & h1 {
+    font-weight: normal;
+    color: $text-dark;
+  }
+}

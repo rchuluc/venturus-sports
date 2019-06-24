@@ -2,16 +2,14 @@ import React from 'react'
 import './App.scss'
 import Navbar from './Components/Navbar/Navbar'
 import Breadcumb from './Components/Breadcumb/Breadcumb'
-import Header from './Components/Header/Header'
-import Table from './Components/Table/Table'
+import NewUser from './Pages/NewUser/NewUser'
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Breadcumb />
-      <Header />
-      <Table />
+      <NewUser />
     </div>
   )
 }

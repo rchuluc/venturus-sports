@@ -1,0 +1,110 @@
+@import '../../colors.scss';
+
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  border-top: 2.5px solid #f0f0f0;
+  width: 70vw;
+  height: fit-content;
+  padding-top: 48px;
+}
+
+.form-col {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  width: 30vw;
+  height: 35vh;
+
+  & span {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    & p {
+      display: inline-flex;
+      width: 90%;
+    }
+
+    & label {
+      display: inline-flex;
+      justify-content: space-between;
+      width: 100%;
+
+      & p {
+        font-size: 0.875rem;
+        color: #777777;
+        margin: 0;
+        width: fit-content;
+      }
+    }
+  }
+
+  & input {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+
+  & input[type='text'],
+  input[type='email'] {
+    width: 100%;
+
+    &:hover {
+    }
+  }
+
+  & input[type='checkbox'] {
+    &:hover {
+    }
+  }
+
+  & input[type='radio'] {
+    &:hover {
+    }
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.action-buttons {
+  margin-top: 32px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  & button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: hsl(0, 0%, 87%);
+    cursor: pointer;
+
+    &:hover {
+      background-color: hsl(0, 0%, 90%);
+    }
+  }
+
+  & button.btn-primary {
+    background-color: $medium-sea-green;
+    color: white;
+
+    &:hover {
+      background-color: hsl(168, 55%, 60%);
+    }
+
+    &:active {
+      background-color: hsl(168, 55%, 50%);
+    }
+  }
+
+  & button:first-child {
+    margin-right: 1.5rem;
+  }
+}
