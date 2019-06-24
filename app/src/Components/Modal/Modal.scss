@@ -1,0 +1,63 @@
+@import '../../colors.scss';
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.card-body {
+  background-color: white;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 0 80px 16px 80px;
+  border-radius: 3px;
+  & div p {
+    margin-bottom: 2rem;
+  }
+  box-shadow: $shadow;
+}
+
+.action-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  & button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: hsl(0, 0%, 87%);
+    cursor: pointer;
+
+    &:hover {
+      background-color: hsl(0, 0%, 90%);
+    }
+  }
+
+  & button.btn-primary {
+    background-color: $medium-sea-green;
+    color: white;
+
+    &:hover {
+      background-color: hsl(168, 55%, 60%);
+    }
+
+    &:active {
+      background-color: hsl(168, 55%, 50%);
+    }
+  }
+
+  & button:first-child {
+    margin-right: 2rem;
+  }
+}

@@ -57,7 +57,7 @@
 
     & .table-content-head {
         display: grid;
-        grid-template-columns: 1.2fr 1.2fr 2fr 1fr 1fr 1.2fr 0.5fr 0.5fr 0.5fr 0.25fr;
+        grid-template-columns: 1.2fr 1.5fr 2fr 1fr 1fr 1.2fr 0.5fr 0.5fr 0.5fr 0.25fr;
         grid-template-rows: 2rem;
         grid-column-gap: 0px;
         grid-row-gap: 0px;
@@ -76,7 +76,7 @@
     & .table-content-data {
 
         & div {
-            grid-template-columns: 1.2fr 1.2fr 2fr 1fr 1fr 1.2fr 0.5fr 0.5fr 0.5fr 0.25fr;
+            grid-template-columns: 1.2fr 1.5fr 2fr 1fr 1fr 1.2fr 0.5fr 0.5fr 0.5fr 0.25fr;
             grid-template-rows: 2rem;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
