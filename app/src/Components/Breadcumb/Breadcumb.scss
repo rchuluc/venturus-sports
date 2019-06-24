@@ -1,0 +1,16 @@
+@import '../../colors.scss';
+
+.breadcumb {
+    width: 100vw;
+    height: 32px;
+    background-color: $white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 0 0 0 48px;
+
+    & i {
+        color: $medium-sea-green
+    }
+}

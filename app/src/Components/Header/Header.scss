@@ -1,0 +1,47 @@
+@import '../../colors.scss';
+
+.header {
+    height: 120px;
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: $powder-blue;
+
+    & div.header-item {
+        margin-left: 48px
+    }
+}
+
+.header-item {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+
+    & i {
+        margin: auto;
+        font-size: 40px;
+        color: $medium-sea-green
+    }
+}
+
+.header-item-text {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 18px;
+
+    & p {
+        align-self: flex-start;
+        margin: 4px;
+        font-size: 0.8rem;
+        color: $dark-slate-gray
+    }
+
+    & h3 {
+        align-self: flex-start;
+        margin: 0;
+        font-size: 1.5rem;
+        color: $text-dark
+    }
+}
