@@ -5,7 +5,7 @@
   flex-flow: column wrap;
   justify-content: flex-start;
   border-top: 2.5px solid #f0f0f0;
-  width: 70vw;
+  width: 80vw;
   height: fit-content;
   padding-top: 48px;
 }
@@ -14,8 +14,16 @@
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  width: 30vw;
-  height: 35vh;
+  width: 35vw;
+  height: 40vh;
+
+  & div.inputs {
+
+    & label {
+      width: auto;
+      margin-right: 8px
+    }
+  }
 
   & span {
     display: flex;
@@ -27,10 +35,21 @@
       width: 90%;
     }
 
+    & span p.helpText {
+      display: inline-flex;
+      position: absolute;
+      visibility: hidden;
+      width: fit-content;
+      margin: 8px 0px 0px 0px;
+      font-size: 0.875rem;
+      color: #777777;
+    }
+
     & label {
       display: inline-flex;
       justify-content: space-between;
       width: 100%;
+      margin-bottom: 5px;
 
       & p {
         font-size: 0.875rem;
@@ -42,7 +61,7 @@
   }
 
   & input {
-    border: 1px solid #dddddd;
+    border: 1.5px solid #dddddd;
     border-radius: 5px;
     padding: 0.5rem;
   }
@@ -51,17 +70,13 @@
   input[type='email'] {
     width: 100%;
 
-    &:hover {
-    }
-  }
+    &:focus {
+      outline: none;
+      border-color: $medium-sea-green;
 
-  & input[type='checkbox'] {
-    &:hover {
-    }
-  }
-
-  & input[type='radio'] {
-    &:hover {
+      &~span p.helpText {
+        visibility: visible;
+      }
     }
   }
 }
@@ -74,7 +89,7 @@
 }
 
 .action-buttons {
-  margin-top: 32px;
+  margin-top: 48px;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -105,6 +120,6 @@
   }
 
   & button:first-child {
-    margin-right: 1.5rem;
+    margin-right: 1.2rem;
   }
 }

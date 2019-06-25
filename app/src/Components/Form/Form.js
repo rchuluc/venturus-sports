@@ -1,5 +1,7 @@
 import React from 'react'
 import './Form.scss'
+import Checkbox from '../Checkbox/Checkbox'
+import RadioButton from '../RadioButton/RadioButton'
 
 const Form = () => {
   return (
@@ -9,14 +11,23 @@ const Form = () => {
           <span>
             <label for="Username">Username</label>
             <input type="text" id="Username" />
+            <span>
+              <p className="helpText">Enter a username</p>
+            </span>
           </span>
           <span>
             <label for="Name">Name</label>
             <input type="text" id="Name" />
+            <span>
+              <p className="helpText">Enter your name</p>
+            </span>
           </span>
           <span>
             <label for="Email">E-mail</label>
             <input type="email" id="Email" />
+            <span>
+              <p className="helpText">Your best e-mail</p>
+            </span>
           </span>
         </div>
         <div className="form-col">
@@ -25,32 +36,28 @@ const Form = () => {
               City<p>optional</p>
             </label>
             <input type="text" id="City" />
+            <span>
+              <p className="helpText">Where you from?</p>
+            </span>
           </span>
           <span>
             <p>Ride in group?</p>
-            <div>
-              <input type="radio" name="ride" value="Always" /> Always
-              <input type="radio" name="ride" value="Sometimes" /> Sometimes
-              <input type="radio" name="ride" value="Never" /> Never
+            <div className="inputs">
+              <RadioButton name="ride" value="Always" />
+              <RadioButton name="ride" value="Sometimes" />
+              <RadioButton name="ride" value="Never" />
             </div>
           </span>
           <span>
             <p>Days of the week</p>
-            <div id="daysOfWeek">
-              <input type="checkbox" name="mon" value="Mon" />
-              Mon
-              <input type="checkbox" name="tue" value="Tue" />
-              Tue
-              <input type="checkbox" name="wed" value="Wed" />
-              Wed
-              <input type="checkbox" name="thu" value="Thu" />
-              Thu
-              <input type="checkbox" name="fri" value="Fri" />
-              Fri
-              <input type="checkbox" name="sat" value="Sat" />
-              Sat
-              <input type="checkbox" name="sun" value="Sun" />
-              Sun
+            <div className="inputs">
+              <Checkbox value="Mon" name="days" />
+              <Checkbox value="Tue" name="days" />
+              <Checkbox value="Wed" name="days" />
+              <Checkbox value="Thu" name="days" />
+              <Checkbox value="Fri" name="days" />
+              <Checkbox value="Sat" name="days" />
+              <Checkbox value="Sun" name="days" />
             </div>
           </span>
         </div>

@@ -188,4 +188,18 @@ const handleDelete = async (id, data) => {
   return await data.filter(item => item.id !== id)
 }
 
+const handleSubmitForm = () => {
+  const ride = [...document.querySelectorAll('input[name=ride]')].filter(
+    item => item.checked
+  )[0].value
+
+  const days = [...document.querySelectorAll('input[name=days]')]
+    .filter(item => item.checked)
+    .reduce((prev, curr) => {
+      prev = prev || []
+      prev.push(curr.value)
+      return prev
+    }, [])
+}
+
 export { getTableData, handleSearch, handleDelete }
