@@ -1,18 +1,29 @@
 import React from 'react'
 import './NewUser.scss'
 import Form from '../../Components/Form/Form'
+import Navbar from '../../Components/Navbar/Navbar'
+import Breadcumb from '../../Components/Breadcumb/Breadcumb'
 
 const NewUser = () => {
   return (
-    <div className="container">
-      <div className="header">
-        <h1>Registration</h1>
-        <span className="separator" />
+    <React.Fragment>
+      <Navbar />
+      <Breadcumb
+        routes={[
+          { name: 'Users', path: '/user' },
+          { name: 'New User', path: '/user/new' }
+        ]}
+      />
+      <div className="container">
+        <div className="registration-header">
+          <h1>Registration</h1>
+          <span className="separator" />
+        </div>
+        <div className="content">
+          <Form />
+        </div>
       </div>
-      <div className="content">
-        <Form />
-      </div>
-    </div>
+    </React.Fragment>
   )
 }
 
