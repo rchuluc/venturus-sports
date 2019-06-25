@@ -1,60 +1,65 @@
 @import '../../colors.scss';
 
 .checkbox {
-    height: 24px;
-    position: relative;
-    padding-left: 32px;
+  height: 24px;
+  position: relative;
+  padding-left: 32px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  line-height: 24px;
+
+  & input {
+    position: absolute;
+    opacity: 0;
     cursor: pointer;
-    font-size: 1rem;
-    user-select: none;
-    line-height: 24px;
+    height: 0;
+    width: 0;
+  }
 
-    & input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
+  & span {
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border: 1.5px solid #dddddd;
+    border-radius: 5px;
+  }
 
-    & span {
-        display: flex;
-        box-sizing: border-box;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 24px;
-        width: 24px;
-        background-color: #ffffff;
-        border: 1.5px solid #dddddd;
-        border-radius: 5px;
-    }
+  //Invalid
+  & input:invalid ~ span {
+    border-color: $error;
+  }
 
-    &:hover input~span {
-        border-color: $medium-sea-green;
-    }
+  &:hover input ~ span {
+    border-color: $medium-sea-green;
+  }
 
-    & input:checked~span {
-        border-color: $medium-sea-green;
-    }
+  & input:checked ~ span {
+    border-color: $medium-sea-green;
+  }
 
-    & span:after {
-        content: "";
-        position: relative;
-        display: none;
-    }
+  & span:after {
+    content: '';
+    position: relative;
+    display: none;
+  }
 
-    & input:checked~span:after {
-        display: flex;
-    }
+  & input:checked ~ span:after {
+    display: flex;
+  }
 
-    & span:after {
-        box-sizing: border-box;
-        margin: auto;
-        width: 6px;
-        height: 12px;
-        border: solid black;
-        border-width: 0 3px 3px 0;
-        transform: rotate(45deg);
-    }
+  & span:after {
+    box-sizing: border-box;
+    margin: auto;
+    width: 6px;
+    height: 12px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
 }

@@ -1,63 +1,66 @@
 @import '../../colors.scss';
 
 .radio {
-    position: relative;
-    padding-left: 32px;
+  position: relative;
+  padding-left: 32px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  line-height: 24px;
+
+  //Invisible input
+  & input {
+    position: absolute;
+    opacity: 0;
     cursor: pointer;
-    font-size: 1rem;
-    user-select: none;
-    line-height: 24px;
+    height: 0;
+    width: 0;
+  }
 
+  //Radio Button
+  & span {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border: 1.5px solid #dddddd;
+    border-radius: 50%;
+  }
 
-    //Invisible input
-    & input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
+  //Invalid
+  & input:invalid ~ span {
+    border-color: $error;
+  }
 
-    //Radio Button
-    & span {
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row wrap;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 24px;
-        width: 24px;
-        background-color: #ffffff;
-        border: 1.5px solid #dddddd;
-        border-radius: 50%;
-    }
+  //Hover
+  &:hover input ~ span {
+    border-color: $medium-sea-green;
+  }
 
-    //Hover
-    &:hover input~span {
-        border-color: $medium-sea-green;
-    }
+  //Checked State
+  & input:checked ~ span {
+    border-color: $medium-sea-green;
+  }
 
-    //Checked State
-    & input:checked~span {
-        border-color: $medium-sea-green;
-    }
+  //Inner dot
+  & span:after {
+    content: '';
+    position: relative;
+    display: none;
+  }
 
-    //Inner dot
-    & span:after {
-        content: "";
-        position: relative;
-        display: none;
-    }
-
-    //Inner dot active
-    & input:checked~span:after {
-        display: inline-flex;
-        width: 12px;
-        height: 12px;
-        margin: auto auto;
-        background-color: black;
-        border-radius: 50%
-    }
-
+  //Inner dot active
+  & input:checked ~ span:after {
+    display: inline-flex;
+    width: 12px;
+    height: 12px;
+    margin: auto auto;
+    background-color: black;
+    border-radius: 50%;
+  }
 }

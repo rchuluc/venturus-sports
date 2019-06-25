@@ -1,74 +1,107 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import './Form.scss'
 import Checkbox from '../Checkbox/Checkbox'
 import RadioButton from '../RadioButton/RadioButton'
+import {
+  createPayload,
+  validateForm,
+  resetInput,
+  clearForm
+} from '../../Utils/scripts'
 
-const Form = () => {
-  return (
-    <div className="form">
-      <div className="form-row">
-        <div className="form-col">
-          <span>
-            <label for="Username">Username</label>
-            <input type="text" id="Username" />
+export default class Form extends PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      invalid: {}
+    }
+  }
+
+  submitForm = async () => {
+    if (await validateForm()) {
+      createPayload()
+    }
+  }
+
+  render() {
+    return (
+      <div className="form">
+        <div className="form-row">
+          <div className="form-col">
             <span>
-              <p className="helpText">Enter a username</p>
+              <label for="Username">Username</label>
+              <input
+                type="text"
+                id="Username"
+                onFocus={event => resetInput(event.target)}
+              />
+              <span>
+                <p className="helpText">Enter a username</p>
+              </span>
             </span>
-          </span>
-          <span>
-            <label for="Name">Name</label>
-            <input type="text" id="Name" />
             <span>
-              <p className="helpText">Enter your name</p>
+              <label for="Name">Name</label>
+              <input
+                type="text"
+                id="Name"
+                onFocus={event => resetInput(event.target)}
+              />
+              <span>
+                <p className="helpText">Enter your name</p>
+              </span>
             </span>
-          </span>
-          <span>
-            <label for="Email">E-mail</label>
-            <input type="email" id="Email" />
             <span>
-              <p className="helpText">Your best e-mail</p>
+              <label for="Email">E-mail</label>
+              <input
+                type="email"
+                id="Email"
+                onFocus={event => resetInput(event.target)}
+              />
+              <span>
+                <p className="helpText">Your best e-mail</p>
+              </span>
             </span>
-          </span>
+          </div>
+          <div className="form-col">
+            <span>
+              <label for="City">
+                City<p>optional</p>
+              </label>
+              <input type="text" id="City" />
+              <span>
+                <p className="helpText">Where you from?</p>
+              </span>
+            </span>
+            <span>
+              <p>Ride in group?</p>
+              <div className="inputs">
+                <RadioButton name="ride" value="Always" reset={resetInput} />
+                <RadioButton name="ride" value="Sometimes" reset={resetInput} />
+                <RadioButton name="ride" value="Never" reset={resetInput} />
+              </div>
+            </span>
+            <span>
+              <p>Days of the week</p>
+              <div className="inputs">
+                <Checkbox value="Mon" name="days" reset={resetInput} />
+                <Checkbox value="Tue" name="days" reset={resetInput} />
+                <Checkbox value="Wed" name="days" reset={resetInput} />
+                <Checkbox value="Thu" name="days" reset={resetInput} />
+                <Checkbox value="Fri" name="days" reset={resetInput} />
+                <Checkbox value="Sat" name="days" reset={resetInput} />
+                <Checkbox value="Sun" name="days" reset={resetInput} />
+              </div>
+            </span>
+          </div>
         </div>
-        <div className="form-col">
-          <span>
-            <label for="City">
-              City<p>optional</p>
-            </label>
-            <input type="text" id="City" />
-            <span>
-              <p className="helpText">Where you from?</p>
-            </span>
-          </span>
-          <span>
-            <p>Ride in group?</p>
-            <div className="inputs">
-              <RadioButton name="ride" value="Always" />
-              <RadioButton name="ride" value="Sometimes" />
-              <RadioButton name="ride" value="Never" />
-            </div>
-          </span>
-          <span>
-            <p>Days of the week</p>
-            <div className="inputs">
-              <Checkbox value="Mon" name="days" />
-              <Checkbox value="Tue" name="days" />
-              <Checkbox value="Wed" name="days" />
-              <Checkbox value="Thu" name="days" />
-              <Checkbox value="Fri" name="days" />
-              <Checkbox value="Sat" name="days" />
-              <Checkbox value="Sun" name="days" />
-            </div>
-          </span>
+
+        <div className="action-buttons">
+          <button className="btn-primary" onClick={this.submitForm}>
+            Save
+          </button>
+          <button onClick={clearForm}>Discard</button>
         </div>
       </div>
-
-      <div className="action-buttons">
-        <button className="btn-primary">Save</button>
-        <button>Discard</button>
-      </div>
-    </div>
-  )
+    )
+  }
 }
-
-export default Form

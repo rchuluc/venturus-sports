@@ -18,10 +18,9 @@
   height: 40vh;
 
   & div.inputs {
-
     & label {
       width: auto;
-      margin-right: 8px
+      margin-right: 8px;
     }
   }
 
@@ -70,11 +69,15 @@
   input[type='email'] {
     width: 100%;
 
+    &:invalid {
+      border-color: $error;
+    }
+
     &:focus {
       outline: none;
       border-color: $medium-sea-green;
 
-      &~span p.helpText {
+      & ~ span p.helpText {
         visibility: visible;
       }
     }
