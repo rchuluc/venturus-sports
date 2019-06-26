@@ -11,3 +11,7 @@ To install all dependencies
 ### `yarn start`
 
 To run this app locally
+
+### `yarn build`
+
+To build the files for deploy
