@@ -310,7 +310,7 @@ const createPayload = async () => {
     ride: await ride
   }
 
-  console.log(newUser)
+  return newUser
 }
 
 export {

@@ -2,24 +2,13 @@ import React, { PureComponent } from 'react'
 import './Form.scss'
 import Checkbox from '../Checkbox/Checkbox'
 import RadioButton from '../RadioButton/RadioButton'
-import {
-  createPayload,
-  validateForm,
-  resetInput,
-  clearForm
-} from '../../Utils/scripts'
+import { resetInput, clearForm } from '../../Utils/scripts'
 
 export default class Form extends PureComponent {
   constructor() {
     super()
     this.state = {
       invalid: {}
-    }
-  }
-
-  submitForm = async () => {
-    if (await validateForm()) {
-      createPayload()
     }
   }
 
@@ -96,7 +85,7 @@ export default class Form extends PureComponent {
         </div>
 
         <div className="action-buttons">
-          <button className="btn-primary" onClick={this.submitForm}>
+          <button className="btn-primary" onClick={this.props.action}>
             Save
           </button>
           <button onClick={clearForm}>Discard</button>

@@ -17,6 +17,9 @@ export default class Table extends PureComponent {
 
   componentDidMount = async () => {
     const apiData = await getTableData()
+    if (Object.entries(this.props.data).length !== 0) {
+      apiData.push(this.props.data)
+    }
     this.setState({
       data: apiData,
       filtered: apiData
@@ -100,7 +103,8 @@ export default class Table extends PureComponent {
                     className="delete-btn"
                     onMouseUp={
                       () => this.showModal(item.id) /*this.delete(item.id)*/
-                    }>
+                    }
+                  >
                     <i className="fas fa-trash" />
                   </span>
                 </div>

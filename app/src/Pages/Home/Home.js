@@ -4,13 +4,13 @@ import Header from '../../Components/Header/Header'
 import Table from '../../Components/Table/Table'
 import Navbar from '../../Components/Navbar/Navbar'
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <React.Fragment>
       <Navbar />
       <Breadcumb routes={[{ name: 'Users', path: '/user' }]} />
       <Header />
-      <Table />
+      <Table data={data} />
     </React.Fragment>
   )
 }

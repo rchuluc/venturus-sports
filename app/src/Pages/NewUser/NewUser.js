@@ -4,7 +4,7 @@ import Form from '../../Components/Form/Form'
 import Navbar from '../../Components/Navbar/Navbar'
 import Breadcumb from '../../Components/Breadcumb/Breadcumb'
 
-const NewUser = () => {
+const NewUser = ({ action }) => {
   return (
     <React.Fragment>
       <Navbar />
@@ -20,7 +20,7 @@ const NewUser = () => {
           <span className="separator" />
         </div>
         <div className="content">
-          <Form />
+          <Form action={action} />
         </div>
       </div>
     </React.Fragment>
