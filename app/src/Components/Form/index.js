@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import './Form.scss'
-import Checkbox from '../Checkbox/Checkbox'
-import RadioButton from '../RadioButton/RadioButton'
+import Checkbox from '../Checkbox'
+import RadioButton from '../RadioButton'
 import { resetInput, clearForm } from '../../Utils/scripts'
 
 export default class Form extends PureComponent {

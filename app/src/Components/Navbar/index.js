@@ -1,13 +1,13 @@
 import React from 'react'
 import './Navbar.scss'
 
-const Navbar = () => {
+const Navbar = ({ icon }) => {
   return (
     <div className="navbar">
       <div className="navbar-logo">
         <h2>
           <span>
-            <i className="fas fa-volleyball-ball" />{' '}
+            <i className={icon} />
           </span>
           Venturus Sports
         </h2>

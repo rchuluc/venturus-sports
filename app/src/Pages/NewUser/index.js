@@ -1,13 +1,13 @@
 import React from 'react'
 import './NewUser.scss'
-import Form from '../../Components/Form/Form'
-import Navbar from '../../Components/Navbar/Navbar'
-import Breadcumb from '../../Components/Breadcumb/Breadcumb'
+import Form from '../../Components/Form'
+import Navbar from '../../Components/Navbar'
+import Breadcumb from '../../Components/Breadcumb'
 
 const NewUser = ({ action }) => {
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar icon="fas fa-user-plus" />
       <Breadcumb
         routes={[
           { name: 'Users', path: '/user' },

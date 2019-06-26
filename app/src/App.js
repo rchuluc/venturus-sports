@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import './App.scss'
-import NewUser from './Pages/NewUser/NewUser'
-import Home from './Pages/Home/Home'
-import { createPayload, validateForm } from './Utils/scripts'
+import NewUser from './Pages/NewUser'
+import Home from './Pages/Home'
+import { createPayload, validateForm, clearForm } from './Utils/scripts'
 
 import {
   BrowserRouter as Router,
@@ -25,6 +25,7 @@ export default class App extends PureComponent {
       this.setState({
         newData: data
       })
+      await clearForm()
     }
   }
 

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { getTableData, handleSearch, handleDelete } from '../../Utils/scripts'
-import Modal from '../Modal/Modal'
+import Modal from '../Modal'
 import './Table.scss'
 
 export default class Table extends PureComponent {
